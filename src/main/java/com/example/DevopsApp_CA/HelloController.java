@@ -17,6 +17,6 @@ public class HelloController {
 
     @GetMapping("/version")
     public String version() {
-        return "Version 1.0";
+        return "Version 2.0";
     }
 }
