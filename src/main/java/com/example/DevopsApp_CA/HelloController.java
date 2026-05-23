@@ -341,6 +341,85 @@ public class HelloController {
                     }
                 }
 
+                .visual-section{
+                    text-align:center;
+                    padding:90px 10%;
+                    background:#ffffff;
+                }
+
+                .visual-container{
+                    margin-top:40px;
+                    background:white;
+                    padding:30px;
+                    border-radius:24px;
+                    box-shadow:0 8px 25px rgba(15,23,42,0.08);
+                    border:1px solid #e2e8f0;
+                }
+
+                .visual-container img{
+                    width:50%;
+                    max-width:500px;
+                    border-radius:18px;
+                    transition:0.4s;
+                }
+
+                .visual-container img:hover{
+                    transform:scale(1.01);
+                }
+
+                .visual-text{
+                    margin-top:20px;
+                    color:#475569;
+                    font-size:16px;
+                    line-height:1.8;
+                }
+
+                .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.stat-box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid #e2e8f0;
+    box-shadow:0 8px 25px rgba(15,23,42,0.05);
+}
+
+.stat-box h1{
+    font-size:42px;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.stat-box p{
+    color:#475569;
+    font-size:15px;
+}
+
+.card,
+.status-card,
+.gallery-card,
+.visual-container,
+.stat-box{
+    animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
                 footer{
                     text-align:center;
                     padding:30px;
@@ -373,13 +452,43 @@ public class HelloController {
 
             <section class="hero" id="about">
 
-                <h1>CI/CD Pipeline Automation</h1>
+                <h1>DevOps CI/CD Pipeline Automation</h1>
 
                 <p>
                     This project demonstrates a fully automated Continuous Integration
                     and Continuous Deployment pipeline using GitHub, Jenkins,
                     Maven, Docker, and Spring Boot.
                 </p>
+
+                <div style="
+margin-top:25px;
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+justify-content:center;
+">
+
+<span style="background:#dbeafe;color:#2563eb;padding:10px 18px;border-radius:30px;font-size:14px;">
+Spring Boot
+</span>
+
+<span style="background:#dcfce7;color:#16a34a;padding:10px 18px;border-radius:30px;font-size:14px;">
+Jenkins
+</span>
+
+<span style="background:#fef3c7;color:#d97706;padding:10px 18px;border-radius:30px;font-size:14px;">
+Docker
+</span>
+
+<span style="background:#ede9fe;color:#7c3aed;padding:10px 18px;border-radius:30px;font-size:14px;">
+GitHub
+</span>
+
+<span style="background:#fee2e2;color:#dc2626;padding:10px 18px;border-radius:30px;font-size:14px;">
+Maven
+</span>
+
+</div>
 
                 <a href="#gallery" class="btn">View Project Gallery</a>
 
@@ -431,6 +540,25 @@ public class HelloController {
 
             </section>
 
+            <section class="visual-section">
+
+                <h1 class="section-title">CI/CD Pipeline Visualization</h1>
+
+                <div class="visual-container">
+
+                    <img src="images/pipeline.png">
+
+                    <p class="visual-text">
+                        This visualization demonstrates the complete CI/CD automation flow
+                        integrating GitHub, Jenkins, Docker, and deployment environments.
+                        The pipeline automates build, testing, packaging, containerization,
+                        and deployment processes.
+                    </p>
+
+                </div>
+
+            </section>
+
             <section class="workflow" id="workflow">
 
                 <h1 class="section-title">CI/CD Workflow</h1>
@@ -458,6 +586,88 @@ public class HelloController {
 
             </section>
 
+            <section class="visual-section">
+
+                <h1 class="section-title">Deployment Workflow Architecture</h1>
+
+                <div class="visual-container">
+
+                    <img src="images/workflow.png">
+
+                    <p class="visual-text">
+                        The deployment workflow illustrates how GitHub source code changes
+                        automatically trigger Jenkins builds, Docker image creation,
+                        registry push operations, and container deployment using a
+                        fully automated DevOps pipeline.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <section>
+
+    <h1 class="section-title">Project Overview</h1>
+
+    <div class="card" style="max-width:1100px;margin:auto;">
+
+        <p style="font-size:16px;line-height:2;text-align:center;">
+
+            This project implements a complete DevOps CI/CD pipeline
+            using Spring Boot, Jenkins, Docker, Maven, GitHub Webhooks,
+            ngrok tunneling, and Vagrant Ubuntu virtual machines.
+
+            The pipeline automates source integration, build processes,
+            containerization, deployment workflows, and continuous delivery
+            using Jenkins automation and Docker containers.
+
+        </p>
+
+    </div>
+
+</section>
+
+            <section>
+
+    <h1 class="section-title">Pipeline Stages</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>1. Source Stage</h2>
+            <p>
+                Developers push source code to GitHub repository,
+                automatically triggering Jenkins CI/CD workflows.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>2. Build Stage</h2>
+            <p>
+                Maven compiles the Spring Boot application
+                and generates deployable artifacts.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>3. Docker Stage</h2>
+            <p>
+                Docker containerizes the application
+                ensuring portability and consistency.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>4. Deployment Stage</h2>
+            <p>
+                Jenkins deploys the Docker container
+                automatically to the target environment.
+            </p>
+        </div>
+
+    </div>
+
+</section>
             <section id="details">
 
                 <h1 class="section-title">Project Details</h1>
@@ -498,6 +708,36 @@ public class HelloController {
 
             </section>
 
+            <section>
+
+    <h1 class="section-title">Project Statistics</h1>
+
+    <div class="stats-grid">
+
+        <div class="stat-box">
+            <h1>100%</h1>
+            <p>Pipeline Automation</p>
+        </div>
+
+        <div class="stat-box">
+            <h1>55+</h1>
+            <p>Project Screenshots</p>
+        </div>
+
+        <div class="stat-box">
+            <h1>24/7</h1>
+            <p>Deployment Availability</p>
+        </div>
+
+        <div class="stat-box">
+            <h1>6+</h1>
+            <p>Integrated Technologies</p>
+        </div>
+
+    </div>
+
+</section>
+
             <section id="status">
 
                 <h1 class="section-title">Deployment Status</h1>
@@ -527,6 +767,103 @@ public class HelloController {
                 </div>
 
             </section>
+
+            <section>
+
+    <h1 class="section-title">Deployment Console</h1>
+
+    <div style="
+        max-width:1100px;
+        margin:auto;
+        background:#0f172a;
+        border-radius:24px;
+        overflow:hidden;
+        box-shadow:0 10px 30px rgba(15,23,42,0.25);
+        border:1px solid #1e293b;
+    ">
+
+        <div style="
+            background:#1e293b;
+            padding:14px 20px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        ">
+
+            <div style="
+                width:14px;
+                height:14px;
+                background:#ef4444;
+                border-radius:50%;
+            "></div>
+
+            <div style="
+                width:14px;
+                height:14px;
+                background:#f59e0b;
+                border-radius:50%;
+            "></div>
+
+            <div style="
+                width:14px;
+                height:14px;
+                background:#22c55e;
+                border-radius:50%;
+            "></div>
+
+            <span style="
+                color:#cbd5e1;
+                margin-left:12px;
+                font-size:14px;
+                font-family:monospace;
+            ">
+                deployment-terminal.sh
+            </span>
+
+        </div>
+
+        <div style="
+    padding:35px;
+    color:#22c55e;
+    font-family:monospace;
+    line-height:2.2;
+    font-size:15px;
+    overflow-x:auto;
+">
+
+<p><span style="color:#38bdf8;">$</span> git push origin main</p>
+
+<p><span style="color:#94a3b8;">➜ Enumerating objects: 18, done.</span></p>
+
+<p><span style="color:#94a3b8;">➜ GitHub Webhook Triggered Successfully...</span></p>
+
+<p><span style="color:#38bdf8;">$</span> Jenkins Pipeline Started</p>
+
+<p><span style="color:#eab308;">➜ [Pipeline] Build Stage Initiated...</span></p>
+
+<p><span style="color:#38bdf8;">$</span> mvn clean package</p>
+
+<p><span style="color:#22c55e;">➜ BUILD SUCCESS</span></p>
+
+<p><span style="color:#38bdf8;">$</span> docker build -t devops-app .</p>
+
+<p><span style="color:#22c55e;">➜ Docker Image Built Successfully</span></p>
+
+<p><span style="color:#38bdf8;">$</span> docker push komal/devops-app</p>
+
+<p><span style="color:#22c55e;">➜ Image Pushed To Docker Hub</span></p>
+
+<p><span style="color:#38bdf8;">$</span> docker run -d -p 8080:8080 devops-app</p>
+
+<p><span style="color:#22c55e;">➜ Container Deployment Successful</span></p>
+
+<p><span style="color:#14b8a6;">➜ Application Running On http://localhost:8080</span></p>
+
+<span class="cursor">█</span>
+
+</div>
+
+</section>
 
             <section id="gallery">
 
